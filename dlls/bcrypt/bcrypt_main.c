@@ -165,6 +165,16 @@ NTSTATUS WINAPI BCryptEnumAlgorithms(ULONG dwAlgOperations, ULONG *pAlgCount,
     return STATUS_NOT_IMPLEMENTED;
 }
 
+NTSTATUS WINAPI BCryptImportKey(BCRYPT_ALG_HANDLE hAlgorithm, BCRYPT_KEY_HANDLE hImportKey,
+                                LPCWSTR pszBlobType, BCRYPT_KEY_HANDLE *phKey, PUCHAR pbKeyObject,
+                                ULONG cbKeyObject, PUCHAR pbInput, ULONG cbInput, ULONG dwFlags)
+{
+    FIXME("%p, %p, %s, %p, %p, %08x, %p, %08x, %08x - stub\n", hAlgorithm, hImportKey,
+          wine_dbgstr_w(pszBlobType), phKey, pbKeyObject, cbKeyObject, pbInput, cbInput, dwFlags);
+
+    return STATUS_NOT_IMPLEMENTED;
+}
+
 #define MAGIC_ALG  (('A' << 24) | ('L' << 16) | ('G' << 8) | '0')
 #define MAGIC_HASH (('H' << 24) | ('A' << 16) | ('S' << 8) | 'H')
 #define MAGIC_KEY  (('K' << 24) | ('E' << 16) | ('Y' << 8) | '0')
